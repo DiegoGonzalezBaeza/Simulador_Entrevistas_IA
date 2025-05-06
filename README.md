@@ -20,6 +20,35 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Google Gemini Setup
+
+Creación de custom interviews con IA - elecciones de los usuarios desde IA para alimentar a Gemini y de esa manera generar preguntas de entrevista adecuadas 
+
+https://aistudio.google.com
+
+generate API KEY
+
+```bash
+npm install ai @ai-sdk/google
+```
+## Vapi Setup
+
+https://vapi.ai/
+
+- Crear una cuenta en Vapi - usando github
+- Crear asistente
+- Crear Workflow 
+
+```bash
+npm install @vapi-ai/web
+```
+
+- Org Setting -> API KEY (Public)
+
+## Vercel
+
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
