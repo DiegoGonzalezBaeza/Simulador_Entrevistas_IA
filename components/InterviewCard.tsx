@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import DisplayTechicons from './DisplayTechicons';
 
-const InterviewCard = ({interviewId, userId, role, type, techstack, createdAt}: InterviewCardProps) => {
+const InterviewCard = ({id, userId, role, type, techstack, createdAt}: InterviewCardProps) => {
   const feedback = null as Feedback | null;
   const normalizedType = /mix/gi.test(type) ? "Mixed" : type;
   const formattedDate = dayjs(feedback?.createdAt || createdAt || Date.now()).format("DD/MM/YYYY");
@@ -22,7 +22,7 @@ const InterviewCard = ({interviewId, userId, role, type, techstack, createdAt}: 
             <Image src={getRandomInterviewCover()} alt="cover image" width={90} height={90} className='rounded-full object-fit size-[90px]'/>
         
             <h3 className='mt-5 capitalize'>
-                {role} Interview
+                {role} - Entrevista
             </h3>
             <div className='flex flex-row gap-5 mt-3'>
                 <div className='flex flex-row gap-2'>
@@ -44,8 +44,8 @@ const InterviewCard = ({interviewId, userId, role, type, techstack, createdAt}: 
                 
                 <Button className='btn-primary'>
                     <Link href={feedback 
-                        ? `/interview/${interviewId}/feedback`
-                        : `/interview/${interviewId}`
+                        ? `/interview/${id}/feedback`
+                        : `/interview/${id}`
                         }>
                             {feedback ? "Ver Feedback" : "Realizar Entrevista"}
                     </Link>
