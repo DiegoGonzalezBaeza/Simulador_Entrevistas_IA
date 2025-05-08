@@ -46,6 +46,8 @@ export const mappings = {
   jquery: "jquery",
   typescript: "typescript",
   ts: "typescript",
+  python: "python",
+  django: "django",
   javascript: "javascript",
   js: "javascript",
   "angular.js": "angular",
@@ -100,7 +102,7 @@ export const mappings = {
 export const interviewer: CreateAssistantDTO = {
   name: "Interviewer",
   firstMessage:
-    "Hello! Thank you for taking the time to speak with me today. I'm excited to learn more about you and your experience.",
+    "¡Hola! Muchas gracias por tomarse el tiempo para conversar conmigo el día de hoy. Estoy emocionada por conocer más sobre ti y tu experiencia.",
   transcriber: {
     provider: "deepgram",
     model: "nova-2",
@@ -121,35 +123,32 @@ export const interviewer: CreateAssistantDTO = {
     messages: [
       {
         role: "system",
-        content: `You are a spanish lenguage professional job interviewer conducting a real-time voice interview with a candidate. Your goal is to assess their qualifications, motivation, and fit for the role.
+        content: `Eres un entrevistador profesional de habla hispana que está llevando a cabo una entrevista de trabajo en tiempo real por voz con un candidato. Tu objetivo es evaluar sus calificaciones, motivación y adecuación al puesto.
 
-Interview Guidelines:
-Follow the structured question flow:
+Guía para la entrevista:
+
+Sigue el flujo estructurado de preguntas:
 {{questions}}
 
-Engage naturally & react appropriately:
-Listen actively to responses and acknowledge them before moving forward.
-Ask brief follow-up questions if a response is vague or requires more detail.
-Keep the conversation flowing smoothly while maintaining control.
-Be professional, yet warm and welcoming:
+Interactúa de manera natural y reacciona adecuadamente:
+Escucha activamente las respuestas y reconócelas antes de continuar.
+Haz preguntas breves de seguimiento si una respuesta es vaga o necesita más detalle.
 
-Use official yet friendly language.
-Keep responses concise and to the point (like in a real voice interview).
-Avoid robotic phrasing—sound natural and conversational.
-Answer the candidate’s questions professionally:
-
-If asked about the role, company, or expectations, provide a clear and relevant answer.
-If unsure, redirect the candidate to HR for more details.
-
-Conclude the interview properly:
-Thank the candidate for their time.
-Inform them that the company will reach out soon with feedback.
-End the conversation on a polite and positive note.
-
-
-- Be sure to be professional and polite.
-- Keep all your responses short and simple. Use official language, but be kind and welcoming.
-- This is a voice conversation, so keep your responses short, like in a real conversation. Don't ramble for too long.`,
+Mantén la conversación fluida, pero controla el ritmo.
+Sé profesional, pero cordial y acogedor:
+Usa un lenguaje formal pero amigable.
+Mantén las respuestas concisas y directas (como en una entrevista real por voz).
+Evita frases robóticas: habla de manera natural y conversacional.
+Responde profesionalmente a las preguntas del candidato:
+Si pregunta sobre el puesto, la empresa o expectativas, ofrece una respuesta clara y relevante.
+Si no sabes algo, redirígelo/a con amabilidad al área de Recursos Humanos.
+Finaliza la entrevista correctamente:
+Agradece al candidato por su tiempo.
+Infórmale que la empresa se pondrá en contacto pronto con una respuesta.
+Termina la conversación con una nota positiva y educada.
+Sé siempre profesional y cortés.
+Mantén todas tus respuestas breves y simples. Usa un lenguaje formal, pero amable y acogedor.
+Esta es una conversación por voz, así que mantén tus respuestas cortas, como en una charla real. No te extiendas demasiado.`,
       },
     ],
   },
@@ -158,7 +157,7 @@ End the conversation on a polite and positive note.
 // export const interviewer: CreateAssistantDTO = {
 //   name: "Interviewer",
 //   firstMessage:
-//     "¡Hola! Muchas gracias por tomarse el tiempo para conversar conmigo el día de hoy. Estoy emocionada por conocer más sobre ti y tu experiencia.",
+//     "Hello! Thank you for taking the time to speak with me today. I'm excited to learn more about you and your experience.",
 //   transcriber: {
 //     provider: "deepgram",
 //     model: "nova-2",
@@ -252,27 +251,27 @@ export const feedbackSchema = z.object({
   totalScore: z.number(),
   categoryScores: z.tuple([
     z.object({
-      name: z.literal("Communication Skills"),
+      name: z.literal("Habilidades de comunicación"),
       score: z.number(),
       comment: z.string(),
     }),
     z.object({
-      name: z.literal("Technical Knowledge"),
+      name: z.literal("Conocimientos técnicos"),
       score: z.number(),
       comment: z.string(),
     }),
     z.object({
-      name: z.literal("Problem Solving"),
+      name: z.literal("Resolución de problemas"),
       score: z.number(),
       comment: z.string(),
     }),
     z.object({
-      name: z.literal("Cultural Fit"),
+      name: z.literal("Compatibilidad con la cultura organizacional"),
       score: z.number(),
       comment: z.string(),
     }),
     z.object({
-      name: z.literal("Confidence and Clarity"),
+      name: z.literal("Claridad y seguridad comunicativa"),
       score: z.number(),
       comment: z.string(),
     }),

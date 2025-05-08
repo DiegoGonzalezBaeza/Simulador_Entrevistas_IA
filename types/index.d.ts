@@ -47,6 +47,18 @@ interface InterviewCardProps {
   createdAt?: string;
 }
 
+interface FeedbackCardProps {
+  id?: string;
+  userId?: string;
+  interviewId: string;
+  totalScore: number;
+  categoryScores: { name: string; score: number; comment: string; }[];
+  strengths: string[];
+  areasForImprovement: string[];
+  finalAssessment: string;
+  createdAt: string;
+}
+
 interface AgentProps {
   userName: string;
   userId?: string;

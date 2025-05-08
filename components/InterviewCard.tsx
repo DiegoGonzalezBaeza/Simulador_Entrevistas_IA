@@ -3,11 +3,12 @@ import dayjs from 'dayjs'
 import Image from "next/image"
 import { getRandomInterviewCover } from '../lib/utils'
 import { Button } from "@/components/ui/button";
+import { getFeedbackByInterviewId } from '@/lib/actions/general.actions'
 import Link from "next/link";
 import DisplayTechicons from './DisplayTechicons';
 
-const InterviewCard = ({id, userId, role, type, techstack, createdAt}: InterviewCardProps) => {
-  const feedback = null as Feedback | null;
+const InterviewCard = async ({id, userId, role, type, techstack, createdAt}: InterviewCardProps) => {
+  const feedback = userId && id ? await getFeedbackByInterviewId({interviewId: id, userId}): null;
   const normalizedType = /mix/gi.test(type) ? "Mixed" : type;
   const formattedDate = dayjs(feedback?.createdAt || createdAt || Date.now()).format("DD/MM/YYYY");
 
