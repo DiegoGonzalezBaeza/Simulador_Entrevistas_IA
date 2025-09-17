@@ -135,9 +135,6 @@ const AuthForm = ({type}: {type:FormType}) => {
  
     <p className="text-center">
         {isSignIn ? '¿Aún no tienes una cuenta?':'¿Ya tienes una cuenta?'}
-        <h2>Para ingreso sin cuenta</h2>
-        <h3>Email     : invitado@invitado.com</h3>
-        <h3>Contraseña : Invitado159</h3>
         <Link 
             href={!isSignIn ? '/sign-in' : '/sign-up'}
             className="font-bold text-user-primary ml-1"
@@ -145,6 +142,11 @@ const AuthForm = ({type}: {type:FormType}) => {
             {!isSignIn ? "Iniciar sesión" : "Crear una cuenta"}
         </Link>
     </p>
+    <div className="flex justify-center">
+        <h3>Iniciar sesión como invitado</h3>
+        <h4>Email      : invitado@invitado.com</h4>
+        <h4>Contraseña : Invitado159</h4>
+    </div>    
     </div>
     </div>
   )
