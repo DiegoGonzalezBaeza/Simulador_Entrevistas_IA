@@ -135,6 +135,9 @@ const AuthForm = ({type}: {type:FormType}) => {
  
     <p className="text-center">
         {isSignIn ? '¿Aún no tienes una cuenta?':'¿Ya tienes una cuenta?'}
+        <h2>Para ingreso sin cuenta</h2>
+        <h3>Email     : invitado@invitado.com</h3>
+        <h3>Contraseña : Invitado159</h3>
         <Link 
             href={!isSignIn ? '/sign-in' : '/sign-up'}
             className="font-bold text-user-primary ml-1"
