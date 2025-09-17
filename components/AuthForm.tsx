@@ -142,10 +142,10 @@ const AuthForm = ({type}: {type:FormType}) => {
             {!isSignIn ? "Iniciar sesión" : "Crear una cuenta"}
         </Link>
     </p>
-    <div className="flex justify-center">
+    <div className="text-center">
         <h3>Iniciar sesión como invitado</h3>
-        <h4>Email      : invitado@invitado.com</h4>
-        <h4>Contraseña : Invitado159</h4>
+        <h4>- Email      : invitado@invitado.com</h4>
+        <h4>- Contraseña : Invitado159</h4>
     </div>    
     </div>
     </div>
